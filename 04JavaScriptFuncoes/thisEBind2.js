@@ -1,7 +1,11 @@
 function Pessoa() {
-    this.idade = 0;
+    this.idade = 0
 
-    setInterval();
+    const self = this
+    setInterval(function() {
+        self.idade++
+        console.log(self.idade)
+    }/*.bind(this)*/, 1000)
 }
 
-//dsa;
+new Pessoa
