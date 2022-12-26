@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios HTML</title>
+    <link rel="js" href="exercicios/04ListaAninhada.html">
+    <style>
+        #conteudo {
+            padding: 30px 0px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Exercícios HTML</h1>
+    </header>
+    <nav>
+        <a href wb-nav="exercicios/00Teste.html">00 - Teste</a> | 
+        <a href wb-nav="exercicios/01Texto1.html">01 - Texto 1</a> | 
+        <a href wb-nav="exercicios/02Texto2.html">02 - Texto 2</a> |
+        <a href wb-nav="exercicios/03Listas.html">03 - Listas</a> |
+        <a href wb-nav="exercicios/04ListaAninhada.html">04 - Lista Aninhada</a> | 
+        <a href wb-nav="exercicios/05Links.html">05 - Links</a> | 
+        <a href wb-nav="exercicios/06Tabela.html">06 - Tabela</a> | 
+        <a href wb-nav="exercicios/07Images.html">07 - Imagens</a> | 
+        <a href wb-nav="exercicios/08Video.html">08 - Vídeos</a> | 
+    </nav>
+    <section id="conteudo"></section>
+    <footer>
+        Curso de Web Moderno
+    </footer>
+    <script>
+        document.querySelectorAll('[wb-nav]').forEach(link => {
+            const conteudo = document.getElementById('conteudo')
+
+            link.onclick = function(e) {
+                e.preventDefault()
+                fetch(link.getAttribute('wb-nav'))
+                    .then(resp => resp.text())
+                    .then(html => conteudo.innerHTML = html)
+            }
+
+        })
+    </script>
+</body>
+</html>

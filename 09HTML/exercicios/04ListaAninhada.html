@@ -1,0 +1,47 @@
+<h1>Projeto</h1>
+<ul class="tree">
+    <li>
+        <span onclick="abreFecha('backend')">backend</span>
+        <ul id="backend">
+            <li>
+                <span onclick="abreFecha('app')">app</span>
+                <ul id="app">
+                    <li>produto.js</li>
+                    <li>usuario.js</li>
+                    <li>venda.js</li>
+                </ul>
+            </li>
+            <li>
+                <span onclick="abreFecha('config')">config</span>
+                <ul id="config">
+                    <li>banco.js</li>
+                    <li>rotas.js</li>
+                    <li>servidor.js</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li>
+        <span onclick="abreFecha('frontend')">frontend</span>
+        <ul id="frontend">
+            <li>
+                <span onclick="abreFecha('public')">public</span>
+                <ul id="public">
+                    <li>app.css</li>
+                    <li>app.js</li>
+                    <li>index.js</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+
+<script>
+    function abreFecha(text) {
+        let acao = document.getElementById(text)
+        
+        acao.hidden = !acao.hidden 
+    }
+</script>
